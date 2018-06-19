@@ -2,7 +2,7 @@
   "name": "travelers",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://hlupi.github.io/Hlupi.github.io/",
+  "homepage": "https://hlupi.github.io/travellers-locals/",
   "dependencies": {
     "gh-pages": "^1.2.0",
     "react": "^16.4.1",
