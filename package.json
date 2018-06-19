@@ -2,7 +2,9 @@
   "name": "travelers",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://hlupi.github.io/Hlupi.github.io/",
   "dependencies": {
+    "gh-pages": "^1.2.0",
     "react": "^16.4.1",
     "react-bootstrap": "^0.32.1",
     "react-dom": "^16.4.1",
@@ -16,6 +18,8 @@
     "swipe-js-iso": "^2.0.4"
   },
   "scripts": {
+    "predeploy": "yarn run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
