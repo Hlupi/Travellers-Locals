@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 // import { Route } from 'react-router-dom
 import Page from './components/Swipe';
+import Test from './components/Test';
 
 class App extends Component {
   render() {

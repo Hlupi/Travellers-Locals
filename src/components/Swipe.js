@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import quaerystring from 'querystring';
 import ReactSwipe from 'react-swipe';
 import queryStrings from 'superagent'
+import {person} from '../reducers/users'
+import { log } from 'util';
 
 const queryString = require('query-string');
 const query = queryString.parse(window.location.search.slice(1));
@@ -10,12 +12,17 @@ const query = queryString.parse(window.location.search.slice(1));
 // generate slide panes
 const numberOfSlides = parseInt(query.slidesNum, 10) || 20;
 const paneNodes = Array.apply(null, Array(numberOfSlides)).map((_, i) => {
+  console.log(_);
   return (
     <div key={i}>
+      {/* <img src={human.url}/> */}
       <div className="item">{i}</div>
     </div>
   );
 });
+
+console.log();
+
 
 // change Swipe.js options by query params
 const startSlide = parseInt(query.startSlide, 10) || 0;
@@ -34,12 +41,24 @@ const swipeOptions = {
 };
 
 export default class Swipe extends Component {
-  next() {
-    this.props.reactSwipe.next();
+  next = () => {
+    this.reactSwipe.next();
   }
 
-  prev() {
-    this.props.reactSwipe.prev();
+  prev = () => {
+    this.reactSwipe.prev();
+  }
+
+  createPanes = () => {
+    return Array.apply(null, Array(person.length)).map((_, i) => {
+      console.log(person);
+      return (
+        <div key={i}>
+          <img src={person[i].img}/>
+          <div className="item">{i}</div>
+        </div>
+      );
+    });
   }
 
   render() {
@@ -50,7 +69,7 @@ export default class Swipe extends Component {
         <h2>You can pass <a href="https://github.com/voronianski/swipe-js-iso#config-options">Swipe.js options</a> as query params.</h2>
 
         <ReactSwipe ref={reactSwipe => this.reactSwipe = reactSwipe} className="mySwipe" swipeOptions={swipeOptions}>
-            {paneNodes}
+            {this.createPanes()}
         </ReactSwipe>
 
         <div>

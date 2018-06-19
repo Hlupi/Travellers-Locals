@@ -1,26 +1,27 @@
-const person = [{
-        id: 01,
+export const person = [{
+        id: 1,
         name: "Renata",
         age: 30,
         city: "Amsterdam",
         country: "Netherlands",
         email: "renata@gmail.com",
-        picture: '../img/person-1.jpg',
+        url: 'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&h=350',
         interests: {
             yoga: true,
             dancing: true,
             fishing: false
         },
+        isTraveler: true,
 
     },
     {
-        id: 02,
+        id: 2,
         name: "Cris",
         age: 35,
         city: "Berlim",
         country: "Germany",
         email: "cris@gmail.com",
-        picture: '../img/person-2.jpg',
+        url: 'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&h=350',
         interests: {
             yoga: false,
             dancing: true,
@@ -29,5 +30,3 @@ const person = [{
 
     }
 ]
-
-console.log(person[0].name)
