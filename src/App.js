@@ -1,21 +1,22 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
-import InitializeFromStateForm from './components/userInputForm'
-import showResults from "./showResults";
+import SignUpForm from './components/SignUpForm'
+import { connect } from 'react-redux'
+
+import { newUser } from './actions/newUser'
 
 class App extends Component {
   submit = (values) => {
-    // Do something with the form values
     console.log(values);
+    this.props.newUser(values);
   }
   render() {
     return (
       <div className="App">
         <main>
-        <div style={{ padding: 15 }}>
-          <h2>Initialize From State</h2>
-          <InitializeFromStateForm onSubmit={showResults} />
+        <div>
+          <h2>Sign in dear user</h2>
+          <SignUpForm onSubmit={this.submit} />
         </div>
         </main>
       </div>
@@ -23,4 +24,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default connect(null, { newUser })(App);

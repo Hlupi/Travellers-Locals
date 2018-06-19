@@ -4,23 +4,25 @@ import { Field, reduxForm } from 'redux-form';
 import { load as loadAccount } from '../reducers/account';
 const data = {
   // used to populate "account" reducer when "Load" is clicked
-  firstName: 'Jane',
-  lastName: 'Doe',
-  age: '42',
+  firstName: 'Jelena',
+  lastName: 'Medenica',
+  age: '31',
   sex: 'female',
   employed: true,
   favoriteColor: 'Blue',
   bio: 'Born to write amazing Redux code.',
 };
-const colors = ['Red', 'Orange', 'Yellow', 'Green', 'Blue', 'Indigo', 'Violet'];
+const cities = ['Amsterdam', 'Berlin', 'Brussels', 'Paris', 'Stockholm'];
 
-let InitializeFromStateForm = props => {
+let SignUpForm = props => {
   const { handleSubmit, load, pristine, reset, submitting } = props;
   return (
     <form onSubmit={handleSubmit}>
       <div>
         <button type="button" onClick={() => load(data)}>Load Account</button>
       </div>
+
+      {/*//name*/}
       <div>
         <label>First Name</label>
         <div>
@@ -32,68 +34,68 @@ let InitializeFromStateForm = props => {
           />
         </div>
       </div>
-      <div>
-        <label>Last Name</label>
-        <div>
-          <Field
-            name="lastName"
-            component="input"
-            type="text"
-            placeholder="Last Name"
-          />
-        </div>
-      </div>
+
+      {/*//age*/}
       <div>
         <label>Age</label>
         <div>
           <Field name="age" component="input" type="number" placeholder="Age" />
         </div>
       </div>
+
+      {/*//traveller*/}
       <div>
-        <label>Sex</label>
+        <label>Who you are?</label>
         <div>
           <label>
-            <Field name="sex" component="input" type="radio" value="male" />
+            <Field name="user" component="input" type="radio" value="traveller" />
             {' '}
-            Male
+            Traveller
           </label>
           <label>
-            <Field name="sex" component="input" type="radio" value="female" />
+            <Field name="user" component="input" type="radio" value="local" />
             {' '}
-            Female
+            Local
           </label>
         </div>
       </div>
+
+      {/*//cities*/}
       <div>
-        <label>Favorite Color</label>
+        <label>Pick your city</label>
         <div>
-          <Field name="favoriteColor" component="select">
-            <option value="">Select a color...</option>
-            {colors.map(colorOption => (
-              <option value={colorOption} key={colorOption}>
-                {colorOption}
+          <Field name="city" component="select">
+            <option value="">Select a city...</option>
+            {cities.map(city => (
+              <option value={city} key={city}>
+                {city}
               </option>
             ))}
           </Field>
         </div>
       </div>
+
+      {/*//interest*/}
       <div>
-        <label htmlFor="employed">Employed</label>
+        <label htmlFor="interest">Interests</label>
         <div>
-          <Field
-            name="employed"
-            id="employed"
-            component="input"
-            type="checkbox"
-          />
+          yoga: <input type="checkbox" name="interest" value="yoga" />
+          food: <input type="checkbox" name="interest" value="food" />
+          drinking: <input type="checkbox" name="interest" value="drinking" />
+          museum: <input type="checkbox" name="interest" value="museum" />
+          food: <input type="checkbox" name="interest" value="food" />
         </div>
       </div>
+
+      {/*//interest*/}
       <div>
         <label>Bio</label>
         <div>
           <Field name="bio" component="textarea" />
         </div>
       </div>
+
+      {/*//submit*/}
       <div>
         <button type="submit" disabled={pristine || submitting}>Submit</button>
         <button type="button" disabled={pristine || submitting} onClick={reset}>
@@ -105,16 +107,16 @@ let InitializeFromStateForm = props => {
 };
 
 // Decorate with reduxForm(). It will read the initialValues prop provided by connect()
-InitializeFromStateForm = reduxForm({
-  form: 'initializeFromState', // a unique identifier for this form
-})(InitializeFromStateForm);
+SignUpForm = reduxForm({
+  form: 'SignUpForm', // a unique identifier for this form
+})(SignUpForm);
 
 // You have to connect() to any reducers that you wish to connect to yourself
-InitializeFromStateForm = connect(
+SignUpForm = connect(
   state => ({
     initialValues: state.account.data, // pull initial values from account reducer
   }),
   { load: loadAccount }, // bind account loading action creator
-)(InitializeFromStateForm);
+)(SignUpForm);
 
-export default InitializeFromStateForm;
+export default SignUpForm;
