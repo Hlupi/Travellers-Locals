@@ -79,11 +79,12 @@ let SignUpForm = props => {
       <div>
         <label htmlFor="interest">Interests</label>
         <div>
-          yoga: <input type="checkbox" name="interest" value="yoga" />
-          food: <input type="checkbox" name="interest" value="food" />
-          drinking: <input type="checkbox" name="interest" value="drinking" />
-          museum: <input type="checkbox" name="interest" value="museum" />
-          food: <input type="checkbox" name="interest" value="food" />
+          yoga: <Field name="yoga" component="input" type="checkbox" value="yoga" />
+          food: <Field name="food" component="input" type="checkbox" value="food" />
+          drinking: <Field name="drinking" component="input" type="checkbox" value="drinking" />
+          sport: <Field name="sport" component="input" type="checkbox" value="sport" />
+          museum: <Field name="museum" component="input" type="checkbox" value="museum" />
+          coffee: <Field name="coffee" component="input" type="checkbox" value="coffee" />
         </div>
       </div>
 
