@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import StartPage from './components/StartPage'
-import Swipe from './components/Swipe';
+import MainPage from './components/MainPage';
 import { Route } from 'react-router-dom';
 
 class App extends Component {
@@ -11,7 +11,7 @@ class App extends Component {
         <main>
           <div>
             <Route exact path="/" component={StartPage} />
-            <Route exact path="/main-page" component={Swipe} />
+            <Route exact path="/main-page" component={MainPage} />
           </div>
         </main>
       </div>
