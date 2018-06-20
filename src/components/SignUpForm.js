@@ -48,15 +48,15 @@ let SignUpForm = props => {
         <label>Who you are?</label>
         <div>
           <label>
-            <Field name="user" component="input" type="radio" value="traveller" />
+            <Field name="isTraveller" component="input" type="checkbox" value="traveller" />
             {' '}
             Traveller
           </label>
-          <label>
-            <Field name="user" component="input" type="radio" value="local" />
-            {' '}
-            Local
-          </label>
+          {/*// <label>
+          //   <Field name="isLocal" component="input" type="checkbox" value="traveller" />
+          //   {' '}
+          //   Local
+          // </label>*/}
         </div>
       </div>
 
