@@ -54,7 +54,7 @@ export default class Swipe extends Component {
       console.log(person);
       return (
         <div key={i}>
-          <img src={person[i].img}/>
+          <img src={person[i].url}/>
           <div className="item">{i}</div>
         </div>
       );
