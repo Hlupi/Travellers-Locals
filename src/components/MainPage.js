@@ -7,6 +7,11 @@ class MainPage extends Component {
       <div className="App">
         <main>
           <div>
+            <nav>
+              <div>Profile page</div>
+              <div>Main page</div>
+              <div>Profile page</div>
+            </nav>
             <Swipe />
           </div>
         </main>

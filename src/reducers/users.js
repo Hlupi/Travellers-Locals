@@ -26,7 +26,7 @@ export const person = [{
             yoga: false,
             dancing: true,
             fishing: true
-        }
-
+        },
+        isTraveler: true,
     }
 ]

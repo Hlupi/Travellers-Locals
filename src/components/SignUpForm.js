@@ -6,13 +6,17 @@ import { load as loadAccount } from '../reducers/account';
 
 const data = {
   // used to populate "account" reducer when "Load" is clicked
-  firstName: 'Jelena',
-  lastName: 'Medenica',
+  id: 25,
+  name: 'Jelena',
   age: '31',
-  sex: 'female',
   employed: true,
-  favoriteColor: 'Blue',
   bio: 'Born to write amazing Redux code.',
+  isTraveler: true,
+  yoga: true,
+  drinking: true,
+  food: true,
+  city: 'Amsterdam',
+  url: 'https://thumbs.dreamstime.com/b/westy-puppy-funny-posing-white-background-56504819.jpg'
 };
 const cities = ['Amsterdam', 'Berlin', 'Brussels', 'Paris', 'Stockholm'];
 
@@ -29,7 +33,7 @@ let SignUpForm = props => {
         <label>First Name</label>
         <div>
           <Field
-            name="firstName"
+            name="name"
             component="input"
             type="text"
             placeholder="First Name"
@@ -50,7 +54,7 @@ let SignUpForm = props => {
         <label>Who you are?</label>
         <div>
           <label>
-            <Field name="isTraveller" component="input" type="checkbox" value="traveller" />
+            <Field name="isTraveler" component="input" type="checkbox" value="traveller" />
             {' '}
             Traveller
           </label>
