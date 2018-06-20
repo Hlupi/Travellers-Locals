@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
-import SignUpFormContainer from './components/SignUpFormContainer'
-import Page from './components/Swipe';
-// import { Route } from 'react-router-dom
-
+import StartPage from './components/StartPage'
+import Swipe from './components/Swipe';
+import { Route } from 'react-router-dom';
 
 class App extends Component {
   render() {
@@ -11,10 +10,10 @@ class App extends Component {
       <div className="App">
         <main>
           <div>
-            <SignUpFormContainer />
-            <Page/>
+            <Route exact path="/" component={StartPage} />
+            <Route exact path="/main-page" component={Swipe} />
           </div>
-          </main>
+        </main>
       </div>
     );
   }

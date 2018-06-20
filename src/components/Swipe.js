@@ -1,10 +1,6 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
-import quaerystring from 'querystring';
 import ReactSwipe from 'react-swipe';
-import queryStrings from 'superagent'
 import {person} from '../reducers/users'
-import { log } from 'util';
 
 const queryString = require('query-string');
 const query = queryString.parse(window.location.search.slice(1));
@@ -54,7 +50,7 @@ export default class Swipe extends Component {
       console.log(person);
       return (
         <div key={i}>
-          <img src={person[i].img}/>
+          <img  alt={person[i].name} src={person[i].url}/>
           <div className="item">{i}</div>
         </div>
       );
@@ -80,5 +76,3 @@ export default class Swipe extends Component {
     );
   }
 }
-
-
