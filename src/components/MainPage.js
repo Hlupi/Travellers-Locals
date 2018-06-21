@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Swipe from './Swipe'
+import Carousel from './Carousel'
 
 class MainPage extends Component {
   render() {
@@ -12,7 +12,7 @@ class MainPage extends Component {
               <div>Main page</div>
               <div>Profile page</div>
             </nav>
-            <Swipe />
+            <Carousel />
           </div>
         </main>
       </div>
