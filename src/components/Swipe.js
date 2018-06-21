@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import ReactSwipe from 'react-swipe';
 import {person} from '../reducers/users'
+import { connect } from 'react-redux';
+import { matchToLocals } from '../actions/newUser'
 
 const queryString = require('query-string');
 const query = queryString.parse(window.location.search.slice(1));
@@ -36,7 +38,18 @@ const swipeOptions = {
   }
 };
 
-export default class Swipe extends Component {
+class Swipe extends Component {
+  componentDidMount() {
+    if (this.props.currentUser.isTraveler) {
+      this.props.matchToLocals(person)
+      console.log('helloo');
+    }
+
+    // if (!this.props.currentUser.isTraveler) {
+    //   this.props.matchToTravelers()
+    // }
+  }
+
   next = () => {
     this.reactSwipe.next();
   }
@@ -46,15 +59,27 @@ export default class Swipe extends Component {
   }
 
   createPanes = () => {
-    return Array.apply(null, Array(person.length)).map((_, i) => {
-      console.log(person);
+    const { matches } = this.props
+    const panes = Array.apply(null, Array(matches.length)).map((_, i) => {
       return (
         <div key={i}>
-          <img  alt={person[i].name} src={person[i].url}/>
+          <img  alt={matches[i].name} src={matches[i].url}/>
           <div className="item">{i}</div>
         </div>
       );
     });
+    // console.log(panes)
+    // const wtf = this.props.matches.map(match => {
+    //   return (
+    //     <div key={match.id}>
+    //       <img  alt={match.name} src={match.url}/>
+    //       <h2 className="item">{match.name}</h2>
+    //     </div>
+    //   )
+    // })
+    //
+    // console.log(wtf)
+    return panes
   }
 
   render() {
@@ -68,11 +93,25 @@ export default class Swipe extends Component {
             {this.createPanes()}
         </ReactSwipe>
 
+        <ReactSwipe className="mySwipe" swipeOptions={swipeOptions}>
+            {this.createPanes()}
+        </ReactSwipe>
+
         <div>
           <button type="button" onClick={this.prev}>Prev</button>
           <button type="button" onClick={this.next}>Next</button>
         </div>
+        <p></p>
       </div>
     );
   }
 }
+
+const mapStateToProps = state => {
+  return {
+    matches: state.matchUsers,
+    currentUser: state.newUser
+  }
+}
+
+export default connect(mapStateToProps, {matchToLocals})(Swipe)

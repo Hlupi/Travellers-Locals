@@ -1,13 +1,12 @@
 import { person } from './users'
 import { NEW_USER } from '../actions/newUser'
 
-const initialState = person;
+//const initialState = person;
 
-export default (state = initialState, action = {}) => {
+export default (state = {}, action = {}) => {
   switch(action.type) {
   case NEW_USER:
-    return [...state, action.payload.data]
-
+    return action.payload.data
   default:
     return state
   }

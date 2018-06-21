@@ -7,7 +7,6 @@ import { Link } from 'react-router-dom'
 
 class SignUpFormContainer extends Component {
   submit = (values) => {
-    console.log(values);
     this.props.newUser(values);
   }
   render() {
