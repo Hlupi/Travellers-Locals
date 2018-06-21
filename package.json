@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "https://hlupi.github.io/travellers-locals/",
   "dependencies": {
+    "mdbreact": "^4.5.0",
     "query-string": "^6.1.0",
     "react": "^16.4.1",
     "react-bootstrap": "^0.32.1",
@@ -16,6 +17,7 @@
     "redux": "^4.0.0",
     "redux-form": "^7.4.2",
     "redux-thunk": "^2.3.0",
+    "styled-components": "^3.3.3",
     "superagent": "^3.8.3",
     "swipe-js-iso": "^2.0.4"
   },

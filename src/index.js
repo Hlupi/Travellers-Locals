@@ -6,6 +6,9 @@ import registerServiceWorker from './registerServiceWorker';
 import store from './store'
 import {Provider} from 'react-redux'
 import {BrowserRouter} from 'react-router-dom'
+import 'font-awesome/css/font-awesome.min.css';
+
+
 
 ReactDOM.render(<Provider store={store}>
   <BrowserRouter>
