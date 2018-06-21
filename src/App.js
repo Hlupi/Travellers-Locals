@@ -3,6 +3,7 @@ import './App.css';
 import StartPage from './components/StartPage'
 import MainPage from './components/MainPage';
 import { Route } from 'react-router-dom';
+import styled from 'styled-components'
 
 class App extends Component {
   render() {
