@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Swipe from './Swipe'
+import Carousel from './Carousel'
 import NavbarFeatures from './Navbar';
 import {Grid, Row, Col} from 'react-bootstrap'
 
@@ -18,7 +18,7 @@ class MainPage extends Component {
                 <p>helllo</p>
               </Col>
               <Col xs={6} md={4}>
-                <Swipe />
+                <Carousel />
               </Col>
             </Row>
           </Grid>
