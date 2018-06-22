@@ -2,6 +2,7 @@
 
 export const NEW_USER = 'NEW_USER'
 export const MATCH_TO_LOCALS = 'MATCH_TO_LOCALS'
+export const MATCH_TO_TRAVELLERS = 'MATCH_TO_TRAVELLERS'
 
 export function newUser(data) {
   return {
@@ -21,9 +22,11 @@ export function matchToLocals(person) {
   }
 }
 
-// export function matchToTravellers() {
-//   return {
-//     type: MATCH_TO_TRAVELLERS,
-//
-//   }
-// }
+export function matchToTravellers(person) {
+  return {
+    type: MATCH_TO_TRAVELLERS,
+    payload: {
+      person
+    }
+  }
+}
