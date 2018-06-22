@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "https://hlupi.github.io/travellers-locals/",
   "dependencies": {
+    "gh-pages": "^1.2.0",
     "mdbreact": "^4.5.0",
     "query-string": "^6.1.0",
     "react": "^16.4.1",
