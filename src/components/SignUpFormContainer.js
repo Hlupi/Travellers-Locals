@@ -5,6 +5,7 @@ import { newUser } from '../actions/newUser'
 import { Link } from 'react-router-dom'
 import { Grid, Row, Col } from 'react-bootstrap'
 import '../styles/SignUpForm.css'
+import Logo from './Logo.png'
 
 
 class SignUpFormContainer extends Component {
@@ -19,7 +20,7 @@ class SignUpFormContainer extends Component {
           <Grid>
             <Row className="show-grid">
               <Col xs={12} sm={4}>
-                <img src={window.location.origin + '/images/Logo.png'} alt="Traloca logo"/>
+                <img src={Logo} />
                 <SignUpForm onSubmit={this.submit} />
                 <Link to='/main-page' className="link"><h3>Go to main page</h3></Link>
               </Col>
