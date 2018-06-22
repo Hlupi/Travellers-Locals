@@ -2,7 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
 import { load as loadAccount } from '../reducers/account';
-
+import { Button} from 'react-bootstrap'
+import '../styles/SignUpForm.css'
 
 const data = {
   // used to populate "account" reducer when "Load" is clicked
@@ -25,7 +26,9 @@ let SignUpForm = props => {
   return (
     <form onSubmit={handleSubmit}>
       <div>
-        <button type="button" onClick={() => load(data)}>Load Account</button>
+        <h2>Sign up</h2>
+        <h3>or</h3>
+        <Button type="button" onClick={() => load(data)}>Load Account</Button>
       </div>
 
       {/*//name*/}
@@ -104,10 +107,10 @@ let SignUpForm = props => {
 
       {/*//submit*/}
       <div>
-        <button type="submit" disabled={pristine || submitting}>Submit</button>
-        <button type="button" disabled={pristine || submitting} onClick={reset}>
+        <Button type="submit" disabled={pristine || submitting}>Submit</Button>
+        <Button type="button" disabled={pristine || submitting} onClick={reset}>
           Undo Changes
-        </button>
+        </Button>
       </div>
     </form>
   );

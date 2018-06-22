@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import SignUpFormContainer from './SignUpFormContainer'
+// import Bookmark from './Bookmark'
+
 
 class StartPage extends Component {
   render() {

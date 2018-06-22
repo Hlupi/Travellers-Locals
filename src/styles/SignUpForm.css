@@ -1,0 +1,22 @@
+.btn {
+  background: #9EA4BC;
+  color: #FEFEFE;
+}
+
+.btn:hover {
+  background: #9EA4BC;
+  color: #FEFEFE;
+}
+
+.link {
+  color: #D5324D;
+}
+
+.link:hover {
+  text-decoration: none;
+  color: #9EA4BC
+}
+
+.spacings {
+  letter-spacing: 0.3rem;
+}

@@ -1,33 +1,33 @@
 import React, { Component } from 'react';
-import { Navbar, MenuItem, NavItem, Nav, NavDropdown } from 'react-bootstrap';
-import '../styles/Navbar.css'
+import { Navbar, NavItem, Nav } from 'react-bootstrap';
+import './Navbar.css'
 
 class NavbarFeatures extends Component {
   render() {
   return (
-    <Navbar inverse collapseOnSelect>
+    <Navbar collapseOnSelect>
       <Navbar.Header>
-        <Navbar.Brand>
-          <a href="#brand">React-Bootstrap</a>
+        <Navbar.Brand  >
+          <a href="#brand" id="brand">Traloca</a>
         </Navbar.Brand>
         <Navbar.Toggle />
       </Navbar.Header>
       <Navbar.Collapse>
-        <Nav className="navbar">
+        <Nav className="navbar" pullRight>
           <NavItem eventKey={1} href="#">
-            Profile
+            <span className="items">Profile</span>
           </NavItem>
           <NavItem eventKey={2} href="#">
-            Choose
+            <span className="items">Choose</span>
           </NavItem>
           <NavItem eventKey={2} href="#">
-            Bookmark
+            <span className="items">Bookmark</span>
           </NavItem>
           <NavItem eventKey={2} href="#">
-            Invitation
+            <span className="items">Invitation</span>
           </NavItem>
           <NavItem eventKey={2} href="#">
-            Chat
+            <span className="items">Chat</span>
           </NavItem>
         </Nav>
       </Navbar.Collapse>

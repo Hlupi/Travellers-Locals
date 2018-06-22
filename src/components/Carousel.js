@@ -29,7 +29,7 @@ class Carousel extends React.Component {
                 return <div key={match.id}><h1 key={match.id}>{match.name}</h1>
                             <img alt='userImage' src={match.url} />
                             <p>{match.city}</p>
-                            <p>{match.name}s interests are: </p>
+                            <p>{match.name}'s interests are: </p>
                             {match.interests.map((interest) => <i key={interest}>{interest} </i>)}
 
                         </div>
