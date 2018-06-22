@@ -1,32 +1,39 @@
 import React, { Component } from 'react';
 import Carousel from './Carousel'
-import NavbarFeatures from './Navbar';
-import {Grid, Row, Col} from 'react-bootstrap'
+import { connect } from 'react-redux';
 
 
 class MainPage extends Component {
+  handleClick = () => {
+    console.log(this.props.matches);
+    console.log(this.props.currentUser.city);
+
+  }
+
   render() {
     return (
-      <div>
-        <div>
-          <NavbarFeatures />
-        </div>
-        <div>
-            <Grid>
-            <Row className="show-grid">
-              <Col xs={12} md={8}>
-                <p>helllo</p>
-              </Col>
-              <Col xs={6} md={4}>
-                <Carousel />
-              </Col>
-            </Row>
-          </Grid>
-        </div>
+      <div className="App">
+        <main>
+          <div>
+            <nav>
+              <div>Profile page</div>
+              <div>Main page</div>
+              <div>Profile page</div>
+            </nav>
+            <Carousel />
+            <button onClick={this.handleClick}>YES</button>
+          </div>
+        </main>
       </div>
-
     );
   }
 }
 
-export default MainPage
+const mapStateToProps = state => {
+  return {
+    matches: state.matchUsers,
+    currentUser: state.newUser
+  }
+}
+
+export default connect(mapStateToProps)(MainPage)
